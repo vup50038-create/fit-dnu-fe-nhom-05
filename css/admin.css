@@ -1,0 +1,99 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+}
+
+/* SIDEBAR */
+.sidebar {
+    min-height: 100vh;
+    background: #111827;
+}
+
+/* LOGO */
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* MENU */
+.menu a {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* HOVER + ACTIVE (HỒNG TÍM GRADIENT) */
+.menu a:hover,
+.menu a.active {
+    background: linear-gradient(45deg, #ec4899, #8b5cf6);
+    color: white;
+}
+
+/* NAV */
+.navbar {
+    min-height: 80px;
+}
+
+/* TABLE */
+table img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* CARD */
+.card {
+    border-radius: 20px;
+}
+
+/* BUTTON */
+.btn-dark {
+    background: #111827;
+    border: none;
+}
+
+.btn-dark:hover {
+    background: #000;
+}
+
+/* BADGE */
+.badge {
+    border-radius: 30px;
+    padding: 6px 12px;
+}
+
+/* AVATAR ADMIN */
+.admin-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #111827;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-link.pageBtn {
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+    }
+
+    .navbar .container-fluid {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
