@@ -82,43 +82,70 @@ export function validateProduct(data) {
 
 // ================= FILTER BY CATEGORY =================
 
-export function filterByCategory(products, category) {
+export function filterByCategory(
+    products,
+    category
+) {
 
-    if (category === "All") return products;
+    if (category === "All") {
+
+        return products;
+
+    }
 
     return products.filter(
-        p => p.category === category
+        product =>
+            product.category === category
     );
 
 }
 
 // ================= SEARCH PRODUCTS =================
 
-export function searchProducts(products, keyword) {
+export function searchProducts(
+    products,
+    keyword
+) {
 
-    if (!keyword || !keyword.trim()) {
+    if (
+        !keyword
+        || !keyword.trim()
+    ) {
 
         return products;
 
     }
 
-    return products.filter(p =>
-        p.name
+    return products.filter(product =>
+
+        product.name
             .toLowerCase()
-            .includes(keyword.toLowerCase())
+            .includes(
+                keyword.toLowerCase()
+            )
+
     );
 
 }
 
 // ================= PAGINATION =================
 
-export function paginate(products, page, limit) {
+export function paginate(
+    products,
+    page,
+    limit
+) {
 
-    const start = (page - 1) * limit;
+    const start =
+        (page - 1) * limit;
 
-    const end = start + limit;
+    const end =
+        start + limit;
 
-    return products.slice(start, end);
+    return products.slice(
+        start,
+        end
+    );
 
 }
 
@@ -126,8 +153,9 @@ export function paginate(products, page, limit) {
 
 export function formatPrice(price) {
 
-    return new Intl.NumberFormat("vi-VN")
-        .format(price) + " đ";
+    return new Intl.NumberFormat(
+        "vi-VN"
+    ).format(price) + " đ";
 
 }
 
@@ -135,14 +163,18 @@ export function formatPrice(price) {
 
 export function formatDate(date) {
 
-    if (!date) return "";
+    if (!date) {
+
+        return "";
+
+    }
 
     return new Date(date)
         .toLocaleDateString("vi-VN");
 
 }
 
-// ================= WHILE + IF DEMO =================
+// ================= COUNT STOCK =================
 
 export function countStock(products) {
 
@@ -154,7 +186,9 @@ export function countStock(products) {
 
         if (products[i].stock) {
 
-            totalStock += Number(products[i].stock);
+            totalStock += Number(
+                products[i].stock
+            );
 
         }
         else {
@@ -170,10 +204,12 @@ export function countStock(products) {
     return totalStock;
 
 }
-
 // ================= GET PRODUCT BY ID =================
 
-export function getProductById(products, id) {
+export function getProductById(
+    products,
+    id
+) {
 
     for (let i = 0; i < products.length; i++) {
 
